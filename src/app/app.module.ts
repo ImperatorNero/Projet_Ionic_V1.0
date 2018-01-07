@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BrowserModule } from '@angular/platform-browser';
     TabsPage
   ],
   providers: [
+    Geolocation,
     StatusBar,
     SplashScreen,
     Camera,
