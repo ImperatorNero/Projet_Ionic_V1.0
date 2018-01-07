@@ -2,7 +2,7 @@ import { NavController } from 'ionic-angular';
 
 import { Component } from '@angular/core';
 
-import { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@ionic-native/video-capture-plus';
+import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
 
 @Component({
   selector: 'page-about',
