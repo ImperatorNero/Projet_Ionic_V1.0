@@ -14,6 +14,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BrowserModule } from '@angular/platform-browser';
 import { Geolocation } from '@ionic-native/geolocation';
 
+import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -39,6 +41,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
+    , MediaCapture
   ]
 })
 export class AppModule {}

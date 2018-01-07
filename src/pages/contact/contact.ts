@@ -21,7 +21,7 @@ export class ContactPage {
 this.geolocation.getCurrentPosition().then((resp) => {
 // resp.coords.latitude
 // resp.coords.longitude
-alert(JSON.stringify(resp));
+alert("Latitude: "+JSON.stringify(resp.coords.latitude)+" Longitude: "+JSON.stringify(resp.coords.longitude));
 }).catch((error) => {
 alert('Error getting location'+JSON.stringify(error));
 });
