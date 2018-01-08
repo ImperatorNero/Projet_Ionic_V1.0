@@ -1,6 +1,6 @@
 import { NavController } from 'ionic-angular';
 
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
 
@@ -10,12 +10,30 @@ import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ion
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController) {
+  @ViewChild('myvideo') myVideo: any;
+
+  constructor(public navCtrl: NavController ,private mediaCapture: MediaCapture) {
   }
 
   startrecording() {
-    MediaCapture.captureVideo((videodata) => {
-      alert(JSON.stringify(videodata));
-     })
+    let options: CaptureImageOptions = { limit: 3 };
+this.mediaCapture.captureVideo(options)
+  .then(
+    (data: MediaFile[]) => console.log(data),
+    (err: CaptureError) => console.error(err)
+  );
   }
-}
+/*
+  selectvideo() {
+    let video = this.myVideo.nativeElement;
+    var options = {
+      sourceType: 2,
+      mediaType: 1
+    };
+
+    Camera.getPicture(options).then((data) => {
+      video.src = data;
+      video.play();
+    })
+    */
+  }
