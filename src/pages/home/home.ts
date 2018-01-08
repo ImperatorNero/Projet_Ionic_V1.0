@@ -19,16 +19,16 @@ export class HomePage {
 
   deletePhoto(index) {
     let confirm = this.alertCtrl.create({
-        title: 'Sure you want to delete this photo? There is NO undo!',
+        title: 'Vous ête sur de vouloir supprimer la photo ?',
         message: '',
         buttons: [
           {
-            text: 'No',
+            text: 'Non',
             handler: () => {
               console.log('Disagree clicked');
             }
           }, {
-            text: 'Yes',
+            text: 'Oui',
             handler: () => {
               console.log('Agree clicked');
               this.photos.splice(index, 1);

@@ -16,12 +16,22 @@ export class AboutPage {
   }
 
   startrecording() {
-    let options: CaptureImageOptions = { limit: 3 };
-this.mediaCapture.captureVideo(options)
-  .then(
-    (data: MediaFile[]) => console.log(data),
-    (err: CaptureError) => console.error(err)
-  );
+
+    // capture callback
+    var captureSuccess = function(mediaFiles) {
+        var i, path, len;
+        for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+            path = mediaFiles[i].fullPath;
+        }
+    };
+
+    // capture error callback
+    var captureError = function(error) {
+        navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+    };
+
+    // start video capture
+    navigator.device.capture.captureVideo(captureSuccess, captureError, {limit:2});
   }
 /*
   selectvideo() {
