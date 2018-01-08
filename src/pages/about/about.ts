@@ -16,7 +16,7 @@ export class AboutPage {
   }
 
   startrecording() {
-
+/*
     // capture callback
     var captureSuccess = function(mediaFiles) {
         var i, path, len;
@@ -32,18 +32,7 @@ export class AboutPage {
 
     // start video capture
     navigator.device.capture.captureVideo(captureSuccess, captureError, {limit:2});
-  }
-/*
-  selectvideo() {
-    let video = this.myVideo.nativeElement;
-    var options = {
-      sourceType: 2,
-      mediaType: 1
-    };
 
-    Camera.getPicture(options).then((data) => {
-      video.src = data;
-      video.play();
-    })
-    */
+*/
   }
+}
